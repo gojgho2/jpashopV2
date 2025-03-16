@@ -1,6 +1,7 @@
 package jpabook.jpashop.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,6 +17,7 @@ public class Member {
     @Column(name = "member_id")
     private Long id;
 
+    @NotEmpty(message = "이름은 필수값입니다.")
     private String name;
 
     @Embedded
